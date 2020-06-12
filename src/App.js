@@ -6,13 +6,15 @@ import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import themeFile from  './util/theme';
 // Redux
-// import { Provider } from 'react-redux';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 // Components
-import Navbar from './components/Navbar';
+import Navbar from './components/NavMenu/Navbar';
 // Pages
 import home from './pages/home';
 import login from './pages/login';
 import signup from './pages/signup';
+import learnwords from './pages/learningWords';
 
 
 const theme = createMuiTheme({themeFile});
@@ -21,7 +23,7 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider theme={theme}>
-        {/* <Provider store={store}>*/}
+        <Provider store={store}>
         <CssBaseline/>
           <Router>
             <Navbar />
@@ -30,6 +32,7 @@ class App extends Component {
                 <Route exact path="/" component={home} />
                 <Route path="/login" component={login} />
                 <Route path="/signup" component={signup} />
+                <Route path="/learnwords" component={learnwords} />
                 {/*<Route exact path="/users/:handle" component={user} />
                 {/* <Route
                   exact
@@ -39,7 +42,7 @@ class App extends Component {
               </Switch>
             </div>
           </Router>
-       {/* </Provider>*/}
+        </Provider>
       </MuiThemeProvider>
     );
   }

@@ -13,7 +13,16 @@ export default {
       contrastText: '#fff'
     }
   },
-  spreadIt: {
-    
+  spreadIt: 
+  {
+    textField: {
+      margin: '10px auto 10px auto'
+    },
+    buttons: {
+      textAlign: 'center',
+      '& a': {
+        margin: '20px 10px'
+      }
+    }
   }  
 };
